@@ -1,0 +1,1 @@
+A Rust example of turning on LEDs on stm32l152c-discovery board.
