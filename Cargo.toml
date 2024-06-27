@@ -1,0 +1,18 @@
+# Cargo.toml
+[package]
+edition = "2018"
+name = "turn_on"
+version = "0.1.0"
+
+[profile.release]
+opt-level = 'z' # turn on maximum optimizations. We only have 64kB
+lto = true      # Link-time-optimizations for further size reduction
+
+[dependencies]
+cortex-m = "^0.7.6"      # Access to the generic ARM peripherals
+cortex-m-rt = "^0.6.15"  # Startup code for the ARM Core
+panic-halt = "^0.2.0"    # Panic handler
+
+[dependencies.stm32l1]
+version="0.15.1"
+features = ["stm32l151", "rt"]
